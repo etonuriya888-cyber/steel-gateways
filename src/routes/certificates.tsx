@@ -1,19 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { Award, X } from "lucide-react";
 import { useState } from "react";
-
-export const Route = createFileRoute("/certificates")({
-  head: () => ({
-    meta: [
-      { title: "Сертификаты CT-KZ — TEMIR QAZYNA XXI" },
-      { name: "description", content: "Действующие сертификаты CT-KZ на стальные клиновые задвижки. Подтверждение казахстанского происхождения продукции." },
-      { property: "og:title", content: "Сертификаты — TEMIR QAZYNA XXI" },
-      { property: "og:url", content: "/certificates" },
-    ],
-    links: [{ rel: "canonical", href: "/certificates" }],
-  }),
-  component: Certificates,
-});
 
 const certs = [
   { title: "Сертификат CT-KZ · DN50–DN100", code: "KZ.7500016.07.01.04125" },
@@ -22,11 +9,19 @@ const certs = [
   { title: "Декларация о соответствии ТР ТС", code: "EAC 032/2013" },
 ];
 
-function Certificates() {
+export default function CertificatesPage() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <>
+      <Helmet>
+        <title>Сертификаты CT-KZ — TEMIR QAZYNA XXI</title>
+        <meta name="description" content="Действующие сертификаты CT-KZ на стальные клиновые задвижки. Подтверждение казахстанского происхождения продукции." />
+        <link rel="canonical" href="/certificates" />
+        <meta property="og:title" content="Сертификаты — TEMIR QAZYNA XXI" />
+        <meta property="og:url" content="/certificates" />
+      </Helmet>
+
       <section className="border-b border-border bg-gradient-hero pt-32 pb-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Документы</div>

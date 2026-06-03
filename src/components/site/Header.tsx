@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -39,15 +39,18 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              activeProps={{ className: "text-gold" }}
-              activeOptions={{ exact: n.to === "/" }}
+              className={({ isActive }) =>
+                `rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-foreground ${
+                  isActive ? "text-gold" : "text-muted-foreground"
+                }`
+              }
+              end={n.to === "/"}
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 

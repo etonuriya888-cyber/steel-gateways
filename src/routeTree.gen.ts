@@ -14,7 +14,6 @@ import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as CertificatesRouteImport } from './routes/certificates'
 import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
 
 const SelectorRoute = SelectorRouteImport.update({
   id: '/selector',
@@ -41,14 +40,8 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/catalog': typeof CatalogRoute
   '/certificates': typeof CertificatesRoute
@@ -56,7 +49,6 @@ export interface FileRoutesByFullPath {
   '/selector': typeof SelectorRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/catalog': typeof CatalogRoute
   '/certificates': typeof CertificatesRoute
@@ -65,7 +57,6 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/catalog': typeof CatalogRoute
   '/certificates': typeof CertificatesRoute
@@ -74,18 +65,11 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/catalog'
-    | '/certificates'
-    | '/contacts'
-    | '/selector'
+  fullPaths: '/about' | '/catalog' | '/certificates' | '/contacts' | '/selector'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/catalog' | '/certificates' | '/contacts' | '/selector'
+  to: '/about' | '/catalog' | '/certificates' | '/contacts' | '/selector'
   id:
     | '__root__'
-    | '/'
     | '/about'
     | '/catalog'
     | '/certificates'
@@ -94,7 +78,6 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CatalogRoute: typeof CatalogRoute
   CertificatesRoute: typeof CertificatesRoute
@@ -139,18 +122,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CatalogRoute: CatalogRoute,
   CertificatesRoute: CertificatesRoute,

@@ -1,23 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { RequestForm } from "@/components/site/RequestForm";
 
-export const Route = createFileRoute("/contacts")({
-  head: () => ({
-    meta: [
-      { title: "Контакты — TEMIR QAZYNA XXI, Актобе" },
-      { name: "description", content: "Телефоны +7 771 599 26 60, +7 702 257 21 29. Email nurhat_84@mail.ru. Адрес: Актобе, пр. Абилкайыр Хана, 53." },
-      { property: "og:title", content: "Контакты TEMIR QAZYNA XXI" },
-      { property: "og:url", content: "/contacts" },
-    ],
-    links: [{ rel: "canonical", href: "/contacts" }],
-  }),
-  component: Contacts,
-});
-
-function Contacts() {
+export default function ContactsPage() {
   return (
     <>
+      <Helmet>
+        <title>Контакты — TEMIR QAZYNA XXI, Актобе</title>
+        <meta name="description" content="Телефоны +7 771 599 26 60, +7 702 257 21 29. Email nurhat_84@mail.ru. Адрес: Актобе, пр. Абилкайыр Хана, 53." />
+        <link rel="canonical" href="/contacts" />
+        <meta property="og:title" content="Контакты TEMIR QAZYNA XXI" />
+        <meta property="og:url" content="/contacts" />
+      </Helmet>
+
       <section className="border-b border-border bg-gradient-hero pt-32 pb-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Контакты</div>

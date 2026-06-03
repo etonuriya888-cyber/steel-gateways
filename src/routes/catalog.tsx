@@ -1,28 +1,23 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { CheckCircle2 } from "lucide-react";
 import valveImg from "@/assets/valve-product.jpg";
 import { PRODUCTS } from "@/lib/products";
 import { RequestForm } from "@/components/site/RequestForm";
 import { useState } from "react";
 
-export const Route = createFileRoute("/catalog")({
-  head: () => ({
-    meta: [
-      { title: "Каталог задвижек DN50–DN200 — TEMIR QAZYNA XXI" },
-      { name: "description", content: "Каталог стальных клиновых задвижек DN50, DN80, DN100, DN150, DN200. PN 1.6 МПа. Производство Казахстан, сертификат CT-KZ." },
-      { property: "og:title", content: "Каталог продукции — TEMIR QAZYNA XXI" },
-      { property: "og:url", content: "/catalog" },
-    ],
-    links: [{ rel: "canonical", href: "/catalog" }],
-  }),
-  component: Catalog,
-});
-
-function Catalog() {
+export default function CatalogPage() {
   const [selected, setSelected] = useState<string>("");
 
   return (
     <>
+      <Helmet>
+        <title>Каталог задвижек DN50–DN200 — TEMIR QAZYNA XXI</title>
+        <meta name="description" content="Каталог стальных клиновых задвижек DN50, DN80, DN100, DN150, DN200. PN 1.6 МПа. Производство Казахстан, сертификат CT-KZ." />
+        <link rel="canonical" href="/catalog" />
+        <meta property="og:title" content="Каталог продукции — TEMIR QAZYNA XXI" />
+        <meta property="og:url" content="/catalog" />
+      </Helmet>
+
       <section className="border-b border-border bg-gradient-hero pt-32 pb-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Каталог</div>
