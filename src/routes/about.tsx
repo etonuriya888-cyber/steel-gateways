@@ -1,24 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import productionImg from "@/assets/production.jpg";
 import pipelineImg from "@/assets/pipeline.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "О компании — TEMIR QAZYNA XXI, производитель арматуры в Актобе" },
-      { name: "description", content: "TEMIR QAZYNA XXI — казахстанский производитель трубопроводной арматуры с 2021 года. Собственное производство в Актобе." },
-      { property: "og:title", content: "О компании TEMIR QAZYNA XXI" },
-      { property: "og:url", content: "/about" },
-      { property: "og:image", content: "/og-about.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: About,
-});
-
-function About() {
+export default function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>О компании — TEMIR QAZYNA XXI, производитель арматуры в Актобе</title>
+        <meta name="description" content="TEMIR QAZYNA XXI — казахстанский производитель трубопроводной арматуры с 2021 года. Собственное производство в Актобе." />
+        <link rel="canonical" href="/about" />
+        <meta property="og:title" content="О компании TEMIR QAZYNA XXI" />
+        <meta property="og:url" content="/about" />
+      </Helmet>
+
       <section className="border-b border-border bg-gradient-hero pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">О компании</div>

@@ -1,25 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { useMemo, useState } from "react";
 import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import { PRODUCTS } from "@/lib/products";
 import { RequestForm } from "@/components/site/RequestForm";
 
-export const Route = createFileRoute("/selector")({
-  head: () => ({
-    meta: [
-      { title: "AI-подбор задвижек — TEMIR QAZYNA XXI" },
-      { name: "description", content: "Интеллектуальный калькулятор подбора стальных клиновых задвижек по среде, давлению, диаметру и температуре." },
-      { property: "og:title", content: "AI-подбор арматуры" },
-      { property: "og:url", content: "/selector" },
-    ],
-    links: [{ rel: "canonical", href: "/selector" }],
-  }),
-  component: Selector,
-});
-
 const media = ["Вода", "Газ", "Нефть", "Нефтепродукты"] as const;
 
-function Selector() {
+export default function SelectorPage() {
   const [m, setM] = useState<(typeof media)[number]>("Вода");
   const [pressure, setPressure] = useState("1.0");
   const [diameter, setDiameter] = useState(100);
@@ -33,6 +20,14 @@ function Selector() {
 
   return (
     <>
+      <Helmet>
+        <title>AI-подбор задвижек — TEMIR QAZYNA XXI</title>
+        <meta name="description" content="Интеллектуальный калькулятор подбора стальных клиновых задвижек по среде, давлению, диаметру и температуре." />
+        <link rel="canonical" href="/selector" />
+        <meta property="og:title" content="AI-подбор арматуры" />
+        <meta property="og:url" content="/selector" />
+      </Helmet>
+
       <section className="border-b border-border bg-gradient-hero pt-32 pb-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">

@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Award, CheckCircle2, Factory, Flame, MessageCircle, ShieldCheck, Wrench, Zap, Droplets, Building2, Landmark } from "lucide-react";
 import heroImg from "@/assets/hero-factory.jpg";
 import productionImg from "@/assets/production.jpg";
@@ -6,20 +7,6 @@ import pipelineImg from "@/assets/pipeline.jpg";
 import valveImg from "@/assets/valve-product.jpg";
 import { RequestForm } from "@/components/site/RequestForm";
 import { PRODUCTS } from "@/lib/products";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "TEMIR QAZYNA XXI — Производитель стальных задвижек в Казахстане" },
-      { name: "description", content: "Производство трубопроводной арматуры и стальных клиновых задвижек DN50–DN200 в Актобе. Сертификат CT-KZ. Для нефтегаза, энергетики, водоснабжения." },
-      { property: "og:title", content: "TEMIR QAZYNA XXI — Стальные задвижки из Казахстана" },
-      { property: "og:description", content: "Казахстанский производитель арматуры. Сертифицированная продукция CT-KZ. Поставки по всему Казахстану." },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Index,
-});
 
 const trust = [
   "Производство в Казахстане",
@@ -50,9 +37,18 @@ const advantages = [
   { icon: MessageCircle, title: "Тех. консультация", text: "Инженерная поддержка на этапе подбора и проектирования." },
 ];
 
-function Index() {
+export default function IndexPage() {
   return (
     <>
+      <Helmet>
+        <title>TEMIR QAZYNA XXI — Производитель стальных задвижек в Казахстане</title>
+        <meta name="description" content="Производство трубопроводной арматуры и стальных клиновых задвижек DN50–DN200 в Актобе. Сертификат CT-KZ. Для нефтегаза, энергетики, водоснабжения." />
+        <link rel="canonical" href="/" />
+        <meta property="og:title" content="TEMIR QAZYNA XXI — Стальные задвижки из Казахстана" />
+        <meta property="og:description" content="Казахстанский производитель арматуры. Сертифицированная продукция CT-KZ. Поставки по всему Казахстану." />
+        <meta property="og:url" content="/" />
+      </Helmet>
+
       {/* HERO */}
       <section className="relative isolate overflow-hidden pt-24">
         <div className="absolute inset-0 -z-10">
@@ -168,7 +164,7 @@ function Index() {
                     <span className="rounded border border-border bg-graphite px-2 py-1">{p.weight}</span>
                     <span className="rounded border border-border bg-graphite px-2 py-1">{p.temp}</span>
                   </div>
-                  <Link to="/catalog" hash={p.id} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline">
+                  <Link to={`/catalog#${p.id}`} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline">
                     Запросить цену <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
