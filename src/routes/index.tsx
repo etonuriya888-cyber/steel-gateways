@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Award, CheckCircle2, Factory, Flame, MessageCircle, ShieldCheck, Wrench, Zap, Droplets, Building2, Landmark } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle2,
+  Factory,
+  Flame,
+  MessageCircle,
+  ShieldCheck,
+  Wrench,
+  Zap,
+  Droplets,
+  Building2,
+  Landmark,
+} from "lucide-react";
 import heroImg from "@/assets/hero-factory.jpg";
 import productionImg from "@/assets/production.jpg";
 import pipelineImg from "@/assets/pipeline.jpg";
@@ -20,21 +33,65 @@ const trust = [
 ];
 
 const industries = [
-  { icon: Flame, title: "Нефтегазовая отрасль", text: "Запорная арматура для магистральных трубопроводов и месторождений." },
-  { icon: Droplets, title: "Водоснабжение", text: "Задвижки для водоканалов, насосных станций и сетей." },
+  {
+    icon: Flame,
+    title: "Нефтегазовая отрасль",
+    text: "Запорная арматура для магистральных трубопроводов и месторождений.",
+  },
+  {
+    icon: Droplets,
+    title: "Водоснабжение",
+    text: "Задвижки для водоканалов, насосных станций и сетей.",
+  },
   { icon: Zap, title: "Энергетика", text: "Арматура для ТЭЦ, котельных и тепловых сетей." },
-  { icon: Building2, title: "Строительство", text: "Комплектация инженерных систем зданий и сооружений." },
-  { icon: Factory, title: "Промышленность", text: "Поставки на горно-обогатительные и металлургические комбинаты." },
-  { icon: Landmark, title: "Гос. проекты", text: "Участие в тендерах и поставки в государственные программы." },
+  {
+    icon: Building2,
+    title: "Строительство",
+    text: "Комплектация инженерных систем зданий и сооружений.",
+  },
+  {
+    icon: Factory,
+    title: "Промышленность",
+    text: "Поставки на горно-обогатительные и металлургические комбинаты.",
+  },
+  {
+    icon: Landmark,
+    title: "Гос. проекты",
+    text: "Участие в тендерах и поставки в государственные программы.",
+  },
 ];
 
 const advantages = [
-  { icon: Factory, title: "Казахстанский производитель", text: "Не посредник. Собственный цех в Актобе." },
-  { icon: ShieldCheck, title: "Контроль качества", text: "Каждое изделие проходит гидравлические испытания." },
-  { icon: Award, title: "Сертификат CT-KZ", text: "Подтверждённое казахстанское происхождение продукции." },
-  { icon: Wrench, title: "Оперативное изготовление", text: "Сроки в 2–3 раза быстрее импортных поставок." },
-  { icon: CheckCircle2, title: "Гибкие условия", text: "Индивидуальные цены и отсрочка для крупных заказчиков." },
-  { icon: MessageCircle, title: "Тех. консультация", text: "Инженерная поддержка на этапе подбора и проектирования." },
+  {
+    icon: Factory,
+    title: "Казахстанский производитель",
+    text: "Не посредник. Собственный цех в Актобе.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Контроль качества",
+    text: "Каждое изделие проходит гидравлические испытания.",
+  },
+  {
+    icon: Award,
+    title: "Сертификат CT-KZ",
+    text: "Подтверждённое казахстанское происхождение продукции.",
+  },
+  {
+    icon: Wrench,
+    title: "Оперативное изготовление",
+    text: "Сроки в 2–3 раза быстрее импортных поставок.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Гибкие условия",
+    text: "Индивидуальные цены и отсрочка для крупных заказчиков.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Тех. консультация",
+    text: "Инженерная поддержка на этапе подбора и проектирования.",
+  },
 ];
 
 export default function IndexPage() {
@@ -42,17 +99,29 @@ export default function IndexPage() {
     <>
       <Helmet>
         <title>TEMIR QAZYNA XXI — Производитель стальных задвижек в Казахстане</title>
-        <meta name="description" content="Производство трубопроводной арматуры и стальных клиновых задвижек DN50–DN200 в Актобе. Сертификат CT-KZ. Для нефтегаза, энергетики, водоснабжения." />
+        <meta
+          name="description"
+          content="Производство трубопроводной арматуры и стальных клиновых задвижек DN50–DN200 в Актобе. Сертификат CT-KZ. Для нефтегаза, энергетики, водоснабжения."
+        />
         <link rel="canonical" href="/" />
         <meta property="og:title" content="TEMIR QAZYNA XXI — Стальные задвижки из Казахстана" />
-        <meta property="og:description" content="Казахстанский производитель арматуры. Сертифицированная продукция CT-KZ. Поставки по всему Казахстану." />
+        <meta
+          property="og:description"
+          content="Казахстанский производитель арматуры. Сертифицированная продукция CT-KZ. Поставки по всему Казахстану."
+        />
         <meta property="og:url" content="/" />
       </Helmet>
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden pt-24">
         <div className="absolute inset-0 -z-10">
-          <img src={heroImg} alt="Производство трубопроводной арматуры TEMIR QAZYNA XXI" className="h-full w-full object-cover opacity-60" width={1920} height={1280} />
+          <img
+            src={heroImg}
+            alt="Производство трубопроводной арматуры TEMIR QAZYNA XXI"
+            className="h-full w-full object-cover opacity-60"
+            width={1920}
+            height={1280}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
           <div className="absolute inset-0 grid-pattern opacity-30" />
         </div>
@@ -64,17 +133,27 @@ export default function IndexPage() {
               Производство · Актобе · Казахстан
             </div>
             <h1 className="font-display text-5xl font-black leading-[1.05] tracking-tight md:text-7xl">
-              Производитель <span className="text-gradient-gold">трубопроводной арматуры</span> в Казахстане
+              Производитель <span className="text-gradient-gold">трубопроводной арматуры</span> в
+              Казахстане
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Надёжные стальные клиновые задвижки и промышленная запорная арматура для нефтегазовой отрасли, энергетики, водоснабжения и инфраструктурных проектов.
+              Надёжные стальные клиновые задвижки и промышленная запорная арматура для нефтегазовой
+              отрасли, энергетики, водоснабжения и инфраструктурных проектов.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#request" className="group inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-bold text-gold-foreground shadow-glow transition hover:opacity-90">
+              <a
+                href="#request"
+                className="group inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-bold text-gold-foreground shadow-glow transition hover:opacity-90"
+              >
                 Получить КП
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="https://wa.me/77025722129" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-6 py-3.5 text-sm font-semibold backdrop-blur transition hover:bg-surface">
+              <a
+                href="https://wa.me/77025722129"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-6 py-3.5 text-sm font-semibold backdrop-blur transition hover:bg-surface"
+              >
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
                 Связаться в WhatsApp
               </a>
@@ -89,7 +168,9 @@ export default function IndexPage() {
               ].map((s) => (
                 <div key={s.l} className="glass rounded-xl p-5">
                   <div className="font-display text-3xl font-black text-gradient-gold">{s.n}</div>
-                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.l}</div>
+                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                    {s.l}
+                  </div>
                 </div>
               ))}
             </div>
@@ -114,20 +195,35 @@ export default function IndexPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-gold opacity-20 blur-2xl" />
-            <img src={productionImg} alt="Производственный цех TEMIR QAZYNA XXI" loading="lazy" width={1600} height={1024} className="rounded-2xl border border-border shadow-elevated" />
+            <img
+              src={productionImg}
+              alt="Производственный цех TEMIR QAZYNA XXI"
+              loading="lazy"
+              width={1600}
+              height={1024}
+              className="rounded-2xl border border-border shadow-elevated"
+            />
           </div>
           <div>
-            <div className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gold">О компании</div>
+            <div className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gold">
+              О компании
+            </div>
             <h2 className="font-display text-4xl font-black md:text-5xl">
               Реальный производитель, <span className="text-gradient-gold">а не посредник</span>
             </h2>
             <p className="mt-6 text-muted-foreground">
-              TEMIR QAZYNA XXI основана 12 марта 2021 года в Актобе. Мы производим стальные клиновые задвижки и трубопроводную арматуру по собственному стандарту СТ ТОО 210340015379-01-2025.
+              TEMIR QAZYNA XXI основана 12 марта 2021 года в Актобе. Мы производим стальные клиновые
+              задвижки и трубопроводную арматуру по собственному стандарту СТ ТОО
+              210340015379-01-2025.
             </p>
             <p className="mt-4 text-muted-foreground">
-              Мы ориентированы на долгосрочное сотрудничество с нефтегазовыми компаниями, государственными заказчиками и крупными промышленными предприятиями Казахстана.
+              Мы ориентированы на долгосрочное сотрудничество с нефтегазовыми компаниями,
+              государственными заказчиками и крупными промышленными предприятиями Казахстана.
             </p>
-            <Link to="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline">
+            <Link
+              to="/about"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline"
+            >
               Подробнее о компании <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -140,19 +236,36 @@ export default function IndexPage() {
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="mb-12 flex items-end justify-between gap-6">
             <div>
-              <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">Каталог продукции</div>
-              <h2 className="font-display text-4xl font-black md:text-5xl">Клиновые стальные задвижки</h2>
+              <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">
+                Каталог продукции
+              </div>
+              <h2 className="font-display text-4xl font-black md:text-5xl">
+                Клиновые стальные задвижки
+              </h2>
             </div>
-            <Link to="/catalog" className="hidden text-sm font-semibold text-gold hover:underline md:inline-flex">
+            <Link
+              to="/catalog"
+              className="hidden text-sm font-semibold text-gold hover:underline md:inline-flex"
+            >
               Весь каталог →
             </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.map((p, i) => (
-              <div key={p.id} className="group relative overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-gold/40 hover:shadow-glow">
+              <div
+                key={p.id}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-gold/40 hover:shadow-glow"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden bg-graphite">
-                  <img src={valveImg} alt={p.name} loading="lazy" width={1024} height={1024} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img
+                    src={valveImg}
+                    alt={p.name}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   <div className="absolute right-3 top-3 rounded-md bg-gradient-gold px-3 py-1 text-xs font-black text-gold-foreground">
                     DN{p.dn}
                   </div>
@@ -160,15 +273,28 @@ export default function IndexPage() {
                 <div className="p-6">
                   <h3 className="font-display text-lg font-bold">{p.name}</h3>
                   <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                    <span className="rounded border border-border bg-graphite px-2 py-1">{p.pn}</span>
-                    <span className="rounded border border-border bg-graphite px-2 py-1">{p.weight}</span>
-                    <span className="rounded border border-border bg-graphite px-2 py-1">{p.temp}</span>
+                    <span className="rounded border border-border bg-graphite px-2 py-1">
+                      {p.pn}
+                    </span>
+                    <span className="rounded border border-border bg-graphite px-2 py-1">
+                      {p.weight}
+                    </span>
+                    <span className="rounded border border-border bg-graphite px-2 py-1">
+                      {p.temp}
+                    </span>
                   </div>
-                  <Link to={`/catalog#${p.id}`} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline">
+                  <Link
+                    to={`/catalog#${p.id}`}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-gold hover:underline"
+                  >
                     Запросить цену <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
-                {i === 0 && <div className="absolute left-3 top-3 rounded-md bg-foreground px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-background">Хит</div>}
+                {i === 0 && (
+                  <div className="absolute left-3 top-3 rounded-md bg-foreground px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-background">
+                    Хит
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -179,11 +305,16 @@ export default function IndexPage() {
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 text-center">
           <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">Отрасли</div>
-          <h2 className="font-display text-4xl font-black md:text-5xl">Где работает наша арматура</h2>
+          <h2 className="font-display text-4xl font-black md:text-5xl">
+            Где работает наша арматура
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {industries.map((i) => (
-            <div key={i.title} className="glass group rounded-2xl p-7 transition hover:-translate-y-1 hover:border-gold/40">
+            <div
+              key={i.title}
+              className="glass group rounded-2xl p-7 transition hover:-translate-y-1 hover:border-gold/40"
+            >
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-gold text-gold-foreground shadow-glow">
                 <i.icon className="h-6 w-6" />
               </div>
@@ -196,7 +327,15 @@ export default function IndexPage() {
 
       {/* PIPELINE CTA STRIP */}
       <section className="relative overflow-hidden border-y border-border">
-        <img src={pipelineImg} alt="" aria-hidden loading="lazy" width={1600} height={1024} className="absolute inset-0 h-full w-full object-cover opacity-30" />
+        <img
+          src={pipelineImg}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          width={1600}
+          height={1024}
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
         <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-20 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
@@ -204,10 +343,14 @@ export default function IndexPage() {
               Нужен подбор арматуры под ваш проект?
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Воспользуйтесь AI-калькулятором: укажите среду, давление и диаметр — мы подберём модель и пришлём КП.
+              Воспользуйтесь AI-калькулятором: укажите среду, давление и диаметр — мы подберём
+              модель и пришлём КП.
             </p>
           </div>
-          <Link to="/selector" className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-bold text-gold-foreground shadow-glow">
+          <Link
+            to="/selector"
+            className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-bold text-gold-foreground shadow-glow"
+          >
             Открыть AI-подбор <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -216,8 +359,12 @@ export default function IndexPage() {
       {/* ADVANTAGES */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12">
-          <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">Преимущества</div>
-          <h2 className="font-display text-4xl font-black md:text-5xl">Почему выбирают TEMIR QAZYNA XXI</h2>
+          <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            Преимущества
+          </div>
+          <h2 className="font-display text-4xl font-black md:text-5xl">
+            Почему выбирают TEMIR QAZYNA XXI
+          </h2>
         </div>
         <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
           {advantages.map((a) => (
@@ -236,15 +383,23 @@ export default function IndexPage() {
         <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">Заявка</div>
+            <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">
+              Заявка
+            </div>
             <h2 className="font-display text-4xl font-black md:text-5xl">
-              Получите коммерческое предложение <span className="text-gradient-gold">за 30 минут</span>
+              Получите коммерческое предложение{" "}
+              <span className="text-gradient-gold">за 30 минут</span>
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Оставьте заявку — инженер свяжется с вами, уточнит параметры и пришлёт КП с ценами и сроками.
+              Оставьте заявку — инженер свяжется с вами, уточнит параметры и пришлёт КП с ценами и
+              сроками.
             </p>
             <ul className="mt-8 space-y-3 text-sm">
-              {["Расчёт цены под ваш объём", "Подбор модели под параметры проекта", "Сертификаты и тех. документация"].map((t) => (
+              {[
+                "Расчёт цены под ваш объём",
+                "Подбор модели под параметры проекта",
+                "Сертификаты и тех. документация",
+              ].map((t) => (
                 <li key={t} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-gold" /> {t}
                 </li>

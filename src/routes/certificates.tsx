@@ -16,7 +16,10 @@ export default function CertificatesPage() {
     <>
       <Helmet>
         <title>Сертификаты CT-KZ — TEMIR QAZYNA XXI</title>
-        <meta name="description" content="Действующие сертификаты CT-KZ на стальные клиновые задвижки. Подтверждение казахстанского происхождения продукции." />
+        <meta
+          name="description"
+          content="Действующие сертификаты CT-KZ на стальные клиновые задвижки. Подтверждение казахстанского происхождения продукции."
+        />
         <link rel="canonical" href="/certificates" />
         <meta property="og:title" content="Сертификаты — TEMIR QAZYNA XXI" />
         <meta property="og:url" content="/certificates" />
@@ -29,7 +32,8 @@ export default function CertificatesPage() {
             Сертификаты <span className="text-gradient-gold">и качество</span>
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Вся продукция изготавливается и сертифицируется в Казахстане. Подтверждённый статус казахстанского производителя.
+            Вся продукция изготавливается и сертифицируется в Казахстане. Подтверждённый статус
+            казахстанского производителя.
           </p>
         </div>
       </section>
@@ -37,11 +41,7 @@ export default function CertificatesPage() {
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {certs.map((c, i) => (
-            <button
-              key={c.code}
-              onClick={() => setOpen(i)}
-              className="group text-left"
-            >
+            <button key={c.code} onClick={() => setOpen(i)} className="group text-left">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface to-graphite p-6 transition group-hover:border-gold/40 group-hover:shadow-glow">
                 <div className="grid h-full place-items-center">
                   <Award className="h-20 w-20 text-gold/40 transition group-hover:text-gold" />
@@ -60,16 +60,28 @@ export default function CertificatesPage() {
       </section>
 
       {open !== null && (
-        <div className="fixed inset-0 z-50 grid place-items-center bg-background/90 p-6 backdrop-blur-sm" onClick={() => setOpen(null)}>
-          <div className="relative w-full max-w-2xl rounded-3xl border border-border bg-surface p-10 shadow-elevated" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setOpen(null)} className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-md border border-border hover:bg-accent">
+        <div
+          className="fixed inset-0 z-50 grid place-items-center bg-background/90 p-6 backdrop-blur-sm"
+          onClick={() => setOpen(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl rounded-3xl border border-border bg-surface p-10 shadow-elevated"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpen(null)}
+              className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-md border border-border hover:bg-accent"
+            >
               <X className="h-4 w-4" />
             </button>
             <Award className="mx-auto h-32 w-32 text-gold" />
-            <h3 className="mt-6 text-center font-display text-2xl font-black">{certs[open].title}</h3>
+            <h3 className="mt-6 text-center font-display text-2xl font-black">
+              {certs[open].title}
+            </h3>
             <p className="mt-2 text-center text-sm text-muted-foreground">{certs[open].code}</p>
             <p className="mt-6 text-center text-sm text-muted-foreground">
-              Полный скан сертификата предоставляется по запросу. Свяжитесь с нами — мы пришлём оригинал в PDF.
+              Полный скан сертификата предоставляется по запросу. Свяжитесь с нами — мы пришлём
+              оригинал в PDF.
             </p>
           </div>
         </div>

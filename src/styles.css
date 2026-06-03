@@ -53,13 +53,13 @@
   --foreground: oklch(0.97 0.005 250);
 
   --graphite: oklch(0.14 0.008 250);
-  --surface: oklch(0.20 0.009 250);
+  --surface: oklch(0.2 0.009 250);
   --surface-elevated: oklch(0.24 0.01 250);
   --steel: oklch(0.55 0.012 250);
 
-  --card: oklch(0.20 0.009 250);
+  --card: oklch(0.2 0.009 250);
   --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.20 0.009 250);
+  --popover: oklch(0.2 0.009 250);
   --popover-foreground: oklch(0.97 0.005 250);
 
   --primary: oklch(0.78 0.13 78);
@@ -76,10 +76,15 @@
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 0.08);
-  --input: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.1);
   --ring: oklch(0.78 0.13 78);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.14 0.008 250) 0%, oklch(0.18 0.01 250) 60%, oklch(0.22 0.012 250) 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.14 0.008 250) 0%,
+    oklch(0.18 0.01 250) 60%,
+    oklch(0.22 0.012 250) 100%
+  );
   --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 82), oklch(0.68 0.12 70));
   --gradient-steel: linear-gradient(180deg, oklch(0.24 0.01 250), oklch(0.18 0.008 250));
 }
@@ -89,15 +94,25 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 @layer utilities {
@@ -112,11 +127,21 @@
     background-clip: text;
     color: transparent;
   }
-  .bg-gradient-hero { background: var(--gradient-hero); }
-  .bg-gradient-gold { background: var(--gradient-gold); }
-  .bg-gradient-steel { background: var(--gradient-steel); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .bg-gradient-steel {
+    background: var(--gradient-steel);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
   .grid-pattern {
     background-image:
       linear-gradient(color-mix(in oklab, white 4%, transparent) 1px, transparent 1px),
@@ -126,12 +151,23 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
-.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

@@ -7,7 +7,10 @@ export default function AboutPage() {
     <>
       <Helmet>
         <title>О компании — TEMIR QAZYNA XXI, производитель арматуры в Актобе</title>
-        <meta name="description" content="TEMIR QAZYNA XXI — казахстанский производитель трубопроводной арматуры с 2021 года. Собственное производство в Актобе." />
+        <meta
+          name="description"
+          content="TEMIR QAZYNA XXI — казахстанский производитель трубопроводной арматуры с 2021 года. Собственное производство в Актобе."
+        />
         <link rel="canonical" href="/about" />
         <meta property="og:title" content="О компании TEMIR QAZYNA XXI" />
         <meta property="og:url" content="/about" />
@@ -24,16 +27,28 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-12 lg:grid-cols-2">
-          <img src={productionImg} alt="Цех производства" loading="lazy" width={1600} height={1024} className="rounded-2xl border border-border shadow-elevated" />
+          <img
+            src={productionImg}
+            alt="Цех производства"
+            loading="lazy"
+            width={1600}
+            height={1024}
+            className="rounded-2xl border border-border shadow-elevated"
+          />
           <div className="space-y-5 text-muted-foreground">
             <p className="text-lg">
-              ТОО «TEMIR QAZYNA XXI» (БИН 210340015379) основано 12 марта 2021 года в Актобе. Сегодня мы — один из ключевых казахстанских производителей трубопроводной арматуры и стальных клиновых задвижек.
+              ТОО «TEMIR QAZYNA XXI» (БИН 210340015379) основано 12 марта 2021 года в Актобе.
+              Сегодня мы — один из ключевых казахстанских производителей трубопроводной арматуры и
+              стальных клиновых задвижек.
             </p>
             <p>
-              Вся продукция выпускается по собственному стандарту <span className="text-foreground font-semibold">СТ ТОО 210340015379-01-2025</span> и подтверждена сертификатом <span className="text-gold font-semibold">CT-KZ</span>.
+              Вся продукция выпускается по собственному стандарту{" "}
+              <span className="text-foreground font-semibold">СТ ТОО 210340015379-01-2025</span> и
+              подтверждена сертификатом <span className="text-gold font-semibold">CT-KZ</span>.
             </p>
             <p>
-              Мы работаем с нефтегазовыми компаниями, водоканалами, энергетическими предприятиями и государственными заказчиками по всему Казахстану.
+              Мы работаем с нефтегазовыми компаниями, водоканалами, энергетическими предприятиями и
+              государственными заказчиками по всему Казахстану.
             </p>
             <div className="grid grid-cols-3 gap-4 pt-6">
               {[
@@ -43,7 +58,9 @@ export default function AboutPage() {
               ].map((s) => (
                 <div key={s.l} className="rounded-xl border border-border bg-surface p-4">
                   <div className="font-display text-2xl font-black text-gradient-gold">{s.n}</div>
-                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.l}</div>
+                  <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                    {s.l}
+                  </div>
                 </div>
               ))}
             </div>
@@ -52,12 +69,22 @@ export default function AboutPage() {
       </section>
 
       <section className="relative overflow-hidden border-y border-border">
-        <img src={pipelineImg} alt="" aria-hidden loading="lazy" width={1600} height={1024} className="absolute inset-0 h-full w-full object-cover opacity-25" />
+        <img
+          src={pipelineImg}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          width={1600}
+          height={1024}
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+        />
         <div className="absolute inset-0 bg-background/70" />
         <div className="relative mx-auto max-w-4xl px-6 py-24 text-center">
           <h2 className="font-display text-4xl font-black md:text-5xl">Наша миссия</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Создавать казахстанскую арматуру мирового уровня — надёжную, сертифицированную и доступную, чтобы крупные промышленные проекты страны строились на отечественной продукции.
+            Создавать казахстанскую арматуру мирового уровня — надёжную, сертифицированную и
+            доступную, чтобы крупные промышленные проекты страны строились на отечественной
+            продукции.
           </p>
         </div>
       </section>

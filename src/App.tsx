@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
@@ -21,7 +22,10 @@ function NotFound() {
           Возможно, страница была перемещена или удалена.
         </p>
         <div className="mt-6">
-          <a href="/" className="inline-flex rounded-md bg-gradient-gold px-4 py-2 text-sm font-bold text-gold-foreground">
+          <a
+            href="/"
+            className="inline-flex rounded-md bg-gradient-gold px-4 py-2 text-sm font-bold text-gold-foreground"
+          >
             На главную
           </a>
         </div>
@@ -48,6 +52,7 @@ export default function App() {
       <Footer />
       <FloatingActions />
       <Toaster />
+      <Analytics />
     </>
   );
 }
