@@ -12,7 +12,10 @@ export default function CatalogPage() {
     <>
       <Helmet>
         <title>Каталог задвижек DN50–DN200 — TEMIR QAZYNA XXI</title>
-        <meta name="description" content="Каталог стальных клиновых задвижек DN50, DN80, DN100, DN150, DN200. PN 1.6 МПа. Производство Казахстан, сертификат CT-KZ." />
+        <meta
+          name="description"
+          content="Каталог стальных клиновых задвижек DN50, DN80, DN100, DN150, DN200. PN 1.6 МПа. Производство Казахстан, сертификат CT-KZ."
+        />
         <link rel="canonical" href="/catalog" />
         <meta property="og:title" content="Каталог продукции — TEMIR QAZYNA XXI" />
         <meta property="og:url" content="/catalog" />
@@ -25,7 +28,8 @@ export default function CatalogPage() {
             Клиновые <span className="text-gradient-gold">стальные задвижки</span>
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Полная линейка DN50–DN200 по стандарту СТ ТОО 210340015379-01-2025. Сертификат CT-KZ. Гарантия 24 месяца.
+            Полная линейка DN50–DN200 по стандарту СТ ТОО 210340015379-01-2025. Сертификат CT-KZ.
+            Гарантия 24 месяца.
           </p>
         </div>
       </section>
@@ -39,8 +43,17 @@ export default function CatalogPage() {
               className={`grid items-center gap-8 rounded-3xl border border-border bg-surface p-6 shadow-elevated md:p-10 lg:grid-cols-2 ${idx % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}
             >
               <div className="relative overflow-hidden rounded-2xl bg-graphite">
-                <img src={valveImg} alt={p.name} loading="lazy" width={1024} height={1024} className="h-full w-full object-cover" />
-                <div className="absolute right-4 top-4 rounded-md bg-gradient-gold px-3 py-1 text-sm font-black text-gold-foreground shadow-glow">DN{p.dn}</div>
+                <img
+                  src={valveImg}
+                  alt={p.name}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute right-4 top-4 rounded-md bg-gradient-gold px-3 py-1 text-sm font-black text-gold-foreground shadow-glow">
+                  DN{p.dn}
+                </div>
               </div>
               <div>
                 <h2 className="font-display text-3xl font-black">{p.name}</h2>
@@ -51,16 +64,25 @@ export default function CatalogPage() {
                   <Spec label="Температура" value={p.temp} />
                 </div>
                 <div className="mt-6">
-                  <div className="mb-2 text-xs font-bold uppercase tracking-widest text-gold">Применение</div>
+                  <div className="mb-2 text-xs font-bold uppercase tracking-widest text-gold">
+                    Применение
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {p.application.map((a) => (
-                      <span key={a} className="rounded-full border border-border bg-graphite px-3 py-1 text-xs text-muted-foreground">{a}</span>
+                      <span
+                        key={a}
+                        className="rounded-full border border-border bg-graphite px-3 py-1 text-xs text-muted-foreground"
+                      >
+                        {a}
+                      </span>
                     ))}
                   </div>
                 </div>
                 <ul className="mt-6 space-y-2 text-sm">
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
+                    <li key={f} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}
+                    </li>
                   ))}
                 </ul>
                 <a
@@ -79,7 +101,9 @@ export default function CatalogPage() {
       <section id="request" className="border-t border-border bg-gradient-hero py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-center font-display text-3xl font-black md:text-4xl">Запросить КП</h2>
-          <p className="mt-3 text-center text-muted-foreground">Ответим в течение 30 минут с ценами и сроками.</p>
+          <p className="mt-3 text-center text-muted-foreground">
+            Ответим в течение 30 минут с ценами и сроками.
+          </p>
           <div className="glass mt-8 rounded-3xl p-6 md:p-10">
             <RequestForm defaultProduct={selected} />
           </div>

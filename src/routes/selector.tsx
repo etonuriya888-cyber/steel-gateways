@@ -15,14 +15,19 @@ export default function SelectorPage() {
   const [shown, setShown] = useState(false);
 
   const match = useMemo(() => {
-    return PRODUCTS.reduce((acc, p) => (Math.abs(p.dn - diameter) < Math.abs(acc.dn - diameter) ? p : acc));
+    return PRODUCTS.reduce((acc, p) =>
+      Math.abs(p.dn - diameter) < Math.abs(acc.dn - diameter) ? p : acc,
+    );
   }, [diameter]);
 
   return (
     <>
       <Helmet>
         <title>AI-подбор задвижек — TEMIR QAZYNA XXI</title>
-        <meta name="description" content="Интеллектуальный калькулятор подбора стальных клиновых задвижек по среде, давлению, диаметру и температуре." />
+        <meta
+          name="description"
+          content="Интеллектуальный калькулятор подбора стальных клиновых задвижек по среде, давлению, диаметру и температуре."
+        />
         <link rel="canonical" href="/selector" />
         <meta property="og:title" content="AI-подбор арматуры" />
         <meta property="og:url" content="/selector" />
@@ -53,7 +58,9 @@ export default function SelectorPage() {
                     type="button"
                     onClick={() => setM(x)}
                     className={`rounded-md border px-3 py-2.5 text-sm font-semibold transition ${
-                      m === x ? "border-gold bg-gold/10 text-gold" : "border-border bg-surface text-muted-foreground hover:text-foreground"
+                      m === x
+                        ? "border-gold bg-gold/10 text-gold"
+                        : "border-border bg-surface text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     {x}
@@ -63,23 +70,46 @@ export default function SelectorPage() {
             </Field>
 
             <Field label={`Диаметр условный: DN${diameter}`}>
-              <input type="range" min={50} max={200} step={10} value={diameter} onChange={(e) => setDiameter(+e.target.value)} className="w-full accent-[oklch(0.78_0.13_78)]" />
+              <input
+                type="range"
+                min={50}
+                max={200}
+                step={10}
+                value={diameter}
+                onChange={(e) => setDiameter(+e.target.value)}
+                className="w-full accent-[oklch(0.78_0.13_78)]"
+              />
               <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                <span>DN50</span><span>DN200</span>
+                <span>DN50</span>
+                <span>DN200</span>
               </div>
             </Field>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Давление, МПа">
-                <input value={pressure} onChange={(e) => setPressure(e.target.value)} className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm" />
+                <input
+                  value={pressure}
+                  onChange={(e) => setPressure(e.target.value)}
+                  className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm"
+                />
               </Field>
               <Field label="Температура, °C">
-                <input value={temp} onChange={(e) => setTemp(e.target.value)} className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm" />
+                <input
+                  value={temp}
+                  onChange={(e) => setTemp(e.target.value)}
+                  className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm"
+                />
               </Field>
             </div>
 
             <Field label="Количество, шт.">
-              <input type="number" min={1} value={qty} onChange={(e) => setQty(+e.target.value)} className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm" />
+              <input
+                type="number"
+                min={1}
+                value={qty}
+                onChange={(e) => setQty(+e.target.value)}
+                className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm"
+              />
             </Field>
 
             <button
@@ -93,7 +123,9 @@ export default function SelectorPage() {
           <div className="lg:col-span-2">
             {shown ? (
               <div className="glass rounded-3xl p-8">
-                <div className="text-xs font-bold uppercase tracking-widest text-gold">Рекомендуемая модель</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gold">
+                  Рекомендуемая модель
+                </div>
                 <h3 className="mt-2 font-display text-2xl font-black">{match.name}</h3>
                 <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <Row k="Среда" v={m} />
@@ -103,12 +135,17 @@ export default function SelectorPage() {
                 </div>
                 <ul className="mt-5 space-y-2 text-sm">
                   {match.features.slice(0, 2).map((f) => (
-                    <li key={f} className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}</li>
+                    <li key={f} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {f}
+                    </li>
                   ))}
                 </ul>
                 <div className="mt-6 border-t border-border pt-6">
                   <div className="mb-3 text-sm font-bold">Отправить заявку менеджеру:</div>
-                  <RequestForm compact defaultProduct={`${match.name}, ${qty} шт., ${m}, ${pressure} МПа`} />
+                  <RequestForm
+                    compact
+                    defaultProduct={`${match.name}, ${qty} шт., ${m}, ${pressure} МПа`}
+                  />
                 </div>
               </div>
             ) : (
@@ -131,7 +168,9 @@ export default function SelectorPage() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mb-6">
-      <div className="mb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">{label}</div>
+      <div className="mb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+        {label}
+      </div>
       {children}
     </div>
   );
@@ -139,7 +178,8 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 function Row({ k, v }: { k: string; v: string }) {
   return (
     <div className="flex justify-between border-b border-border/50 pb-1.5">
-      <span>{k}</span><span className="font-semibold text-foreground">{v}</span>
+      <span>{k}</span>
+      <span className="font-semibold text-foreground">{v}</span>
     </div>
   );
 }
