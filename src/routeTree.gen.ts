@@ -9,129 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SelectorRouteImport } from './routes/selector'
-import { Route as ContactsRouteImport } from './routes/contacts'
-import { Route as CertificatesRouteImport } from './routes/certificates'
-import { Route as CatalogRouteImport } from './routes/catalog'
-import { Route as AboutRouteImport } from './routes/about'
 
-const SelectorRoute = SelectorRouteImport.update({
-  id: '/selector',
-  path: '/selector',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactsRoute = ContactsRouteImport.update({
-  id: '/contacts',
-  path: '/contacts',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CertificatesRoute = CertificatesRouteImport.update({
-  id: '/certificates',
-  path: '/certificates',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CatalogRoute = CatalogRouteImport.update({
-  id: '/catalog',
-  path: '/catalog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-
-export interface FileRoutesByFullPath {
-  '/about': typeof AboutRoute
-  '/catalog': typeof CatalogRoute
-  '/certificates': typeof CertificatesRoute
-  '/contacts': typeof ContactsRoute
-  '/selector': typeof SelectorRoute
-}
-export interface FileRoutesByTo {
-  '/about': typeof AboutRoute
-  '/catalog': typeof CatalogRoute
-  '/certificates': typeof CertificatesRoute
-  '/contacts': typeof ContactsRoute
-  '/selector': typeof SelectorRoute
-}
+export interface FileRoutesByFullPath {}
+export interface FileRoutesByTo {}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/about': typeof AboutRoute
-  '/catalog': typeof CatalogRoute
-  '/certificates': typeof CertificatesRoute
-  '/contacts': typeof ContactsRoute
-  '/selector': typeof SelectorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/about' | '/catalog' | '/certificates' | '/contacts' | '/selector'
+  fullPaths: never
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/catalog' | '/certificates' | '/contacts' | '/selector'
-  id:
-    | '__root__'
-    | '/about'
-    | '/catalog'
-    | '/certificates'
-    | '/contacts'
-    | '/selector'
+  to: never
+  id: '__root__'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {
-  AboutRoute: typeof AboutRoute
-  CatalogRoute: typeof CatalogRoute
-  CertificatesRoute: typeof CertificatesRoute
-  ContactsRoute: typeof ContactsRoute
-  SelectorRoute: typeof SelectorRoute
-}
+export interface RootRouteChildren {}
 
 declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/selector': {
-      id: '/selector'
-      path: '/selector'
-      fullPath: '/selector'
-      preLoaderRoute: typeof SelectorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contacts': {
-      id: '/contacts'
-      path: '/contacts'
-      fullPath: '/contacts'
-      preLoaderRoute: typeof ContactsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates': {
-      id: '/certificates'
-      path: '/certificates'
-      fullPath: '/certificates'
-      preLoaderRoute: typeof CertificatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/catalog': {
-      id: '/catalog'
-      path: '/catalog'
-      fullPath: '/catalog'
-      preLoaderRoute: typeof CatalogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+  interface FileRoutesByPath {}
 }
 
-const rootRouteChildren: RootRouteChildren = {
-  AboutRoute: AboutRoute,
-  CatalogRoute: CatalogRoute,
-  CertificatesRoute: CertificatesRoute,
-  ContactsRoute: ContactsRoute,
-  SelectorRoute: SelectorRoute,
-}
+const rootRouteChildren: RootRouteChildren = {}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
