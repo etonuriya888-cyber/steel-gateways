@@ -59,14 +59,22 @@ export default function ContactsPage() {
                 <div className="font-display text-xl font-bold group-hover:text-gold">nurhat_84@mail.ru</div>
               </div>
             </a>
-            <div className="flex items-start gap-4 rounded-2xl border border-border bg-surface p-6">
+            <a
+              href={TWOGIS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-start gap-4 rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/40"
+            >
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-gold text-gold-foreground"><MapPin className="h-5 w-5" /></div>
-              <div>
+              <div className="flex-1">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Адрес производства</div>
-                <div className="font-display text-lg font-bold">пр. Абилкайыр Хана, 53, помещение 2</div>
+                <div className="font-display text-lg font-bold group-hover:text-gold">пр. Абилкайыр Хана, 53, помещение 2</div>
                 <div className="text-sm text-muted-foreground">г. Актобе, Республика Казахстан</div>
+                <div className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-gold">
+                  Открыть в 2GIS <ExternalLink className="h-3.5 w-3.5" />
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div className="glass rounded-3xl p-6 md:p-10">
@@ -78,14 +86,28 @@ export default function ContactsPage() {
           </div>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-border">
+        <a
+          href={TWOGIS_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-12 block overflow-hidden rounded-3xl border border-border transition hover:border-gold/50"
+          aria-label="Открыть карточку компании в 2GIS"
+        >
           <iframe
             title="TEMIR QAZYNA XXI на карте"
             src="https://www.google.com/maps?q=Aktobe,+Abilkaiyr+Khan+Avenue+53&output=embed"
-            className="h-[420px] w-full"
+            className="pointer-events-none h-[420px] w-full"
             loading="lazy"
           />
-        </div>
+          <div className="flex items-center justify-between gap-3 bg-surface px-5 py-4">
+            <div className="text-sm text-muted-foreground">
+              Казахстан, Актобе, пр. Абилкайыр Хана, 53
+            </div>
+            <span className="inline-flex items-center gap-2 rounded-md bg-gradient-gold px-4 py-2 text-xs font-bold text-gold-foreground shadow-glow">
+              Открыть в 2GIS <ExternalLink className="h-3.5 w-3.5" />
+            </span>
+          </div>
+        </a>
       </section>
     </>
   );
