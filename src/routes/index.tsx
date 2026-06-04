@@ -74,7 +74,7 @@ export default function IndexPage() {
                 Получить КП
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="https://wa.me/77025722129" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-6 py-3.5 text-sm font-semibold backdrop-blur transition hover:bg-surface">
+              <a href="https://wa.me/77022572129" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-6 py-3.5 text-sm font-semibold backdrop-blur transition hover:bg-surface">
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
                 Связаться в WhatsApp
               </a>

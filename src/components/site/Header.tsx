@@ -55,7 +55,7 @@ export function Header() {
         </nav>
 
         <a
-          href="tel:+77025722129"
+          href="tel:+77022572129"
           className="hidden items-center gap-2 rounded-md border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold transition-colors hover:bg-gold/20 md:inline-flex"
         >
           <Phone className="h-4 w-4" />

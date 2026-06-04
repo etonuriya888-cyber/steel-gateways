@@ -35,14 +35,14 @@ export default function ContactsPage() {
                 <div className="font-display text-xl font-bold group-hover:text-gold">+7 771 599 26 60</div>
               </div>
             </a>
-            <a href="tel:+77025722129" className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/40">
+            <a href="tel:+77022572129" className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/40">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-gold text-gold-foreground"><Phone className="h-5 w-5" /></div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Телефон 2</div>
                 <div className="font-display text-xl font-bold group-hover:text-gold">+7 702 257 21 29</div>
               </div>
             </a>
-            <a href="https://wa.me/77025722129" target="_blank" rel="noreferrer" className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/40">
+            <a href="https://wa.me/77022572129" target="_blank" rel="noreferrer" className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/40">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-[#25D366] text-white"><MessageCircle className="h-5 w-5" /></div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">WhatsApp</div>
