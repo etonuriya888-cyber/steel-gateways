@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useMemo, useState } from "react";
 import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
-import { PRODUCTS } from "@/lib/products";
+import { CATEGORIES } from "@/lib/products";
 import { RequestForm } from "@/components/site/RequestForm";
 
 const media = ["Вода", "Газ", "Нефть", "Нефтепродукты"] as const;
@@ -15,14 +15,17 @@ export default function SelectorPage() {
   const [shown, setShown] = useState(false);
 
   const match = useMemo(() => {
-    return PRODUCTS.reduce((acc, p) => (Math.abs(p.dn - diameter) < Math.abs(acc.dn - diameter) ? p : acc));
-  }, [diameter]);
+    // Recommend a category based on selected medium
+    if (m === "Нефть" || m === "Газ") return CATEGORIES.find((c) => c.id === "oil-gas")!;
+    if (m === "Вода") return CATEGORIES.find((c) => c.id === "water-supply")!;
+    return CATEGORIES.find((c) => c.id === "wedge-gate-valves")!;
+  }, [m]);
 
   return (
     <>
       <Helmet>
-        <title>AI-подбор задвижек — TEMIR QAZYNA XXI</title>
-        <meta name="description" content="Интеллектуальный калькулятор подбора стальных клиновых задвижек по среде, давлению, диаметру и температуре." />
+        <title>AI-подбор запорной арматуры — TEMIR QAZYNA XXI</title>
+        <meta name="description" content="Интеллектуальный калькулятор подбора запорной арматуры по среде, давлению, диаметру и температуре. До DN2600." />
         <link rel="canonical" href="/selector" />
         <meta property="og:title" content="AI-подбор арматуры" />
         <meta property="og:url" content="/selector" />
@@ -37,7 +40,7 @@ export default function SelectorPage() {
             Подберите <span className="text-gradient-gold">арматуру за 30 секунд</span>
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Ответьте на 5 вопросов — система предложит модель и отправит заявку нашему инженеру.
+            Ответьте на 5 вопросов — система предложит направление продукции и отправит заявку нашему инженеру. Диаметры до DN2600.
           </p>
         </div>
       </section>
@@ -63,9 +66,9 @@ export default function SelectorPage() {
             </Field>
 
             <Field label={`Диаметр условный: DN${diameter}`}>
-              <input type="range" min={50} max={200} step={10} value={diameter} onChange={(e) => setDiameter(+e.target.value)} className="w-full accent-[oklch(0.78_0.13_78)]" />
+              <input type="range" min={50} max={2600} step={50} value={diameter} onChange={(e) => setDiameter(+e.target.value)} className="w-full accent-[oklch(0.78_0.13_78)]" />
               <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                <span>DN50</span><span>DN200</span>
+                <span>DN50</span><span>DN2600</span>
               </div>
             </Field>
 
@@ -93,10 +96,11 @@ export default function SelectorPage() {
           <div className="lg:col-span-2">
             {shown ? (
               <div className="glass rounded-3xl p-8">
-                <div className="text-xs font-bold uppercase tracking-widest text-gold">Рекомендуемая модель</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gold">Рекомендуемое направление</div>
                 <h3 className="mt-2 font-display text-2xl font-black">{match.name}</h3>
                 <div className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <Row k="Среда" v={m} />
+                  <Row k="Диаметр" v={`DN${diameter}`} />
                   <Row k="Давление" v={`${pressure} МПа`} />
                   <Row k="Температура" v={`${temp} °C`} />
                   <Row k="Количество" v={`${qty} шт.`} />
@@ -108,7 +112,7 @@ export default function SelectorPage() {
                 </ul>
                 <div className="mt-6 border-t border-border pt-6">
                   <div className="mb-3 text-sm font-bold">Отправить заявку менеджеру:</div>
-                  <RequestForm compact defaultProduct={`${match.name}, ${qty} шт., ${m}, ${pressure} МПа`} />
+                  <RequestForm compact defaultProduct={`${match.name}, DN${diameter}, ${qty} шт., ${m}, ${pressure} МПа`} />
                 </div>
               </div>
             ) : (

@@ -16,7 +16,7 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            Казахстанский производитель трубопроводной арматуры и стальных клиновых задвижек.
+            Казахстанский производитель запорной арматуры до DN2600 для нефтегаза, энергетики и водоснабжения.
           </p>
           <div className="mt-4 text-xs text-muted-foreground/70">БИН 210340015379</div>
         </div>
