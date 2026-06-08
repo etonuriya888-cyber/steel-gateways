@@ -7,7 +7,7 @@ export default function AboutPage() {
     <>
       <Helmet>
         <title>О компании — TEMIR QAZYNA XXI, производитель арматуры в Актобе</title>
-        <meta name="description" content="TEMIR QAZYNA XXI — казахстанский производитель трубопроводной арматуры с 2021 года. Собственное производство в Актобе." />
+        <meta name="description" content="TEMIR QAZYNA XXI — казахстанский производитель запорной арматуры с 2021 года. Производство до DN2600 в Актобе." />
         <link rel="canonical" href="/about" />
         <meta property="og:title" content="О компании TEMIR QAZYNA XXI" />
         <meta property="og:url" content="/about" />
@@ -27,7 +27,7 @@ export default function AboutPage() {
           <img src={productionImg} alt="Цех производства" loading="lazy" width={1600} height={1024} className="rounded-2xl border border-border shadow-elevated" />
           <div className="space-y-5 text-muted-foreground">
             <p className="text-lg">
-              ТОО «TEMIR QAZYNA XXI» (БИН 210340015379) основано 12 марта 2021 года в Актобе. Сегодня мы — один из ключевых казахстанских производителей трубопроводной арматуры и стальных клиновых задвижек.
+              ТОО «TEMIR QAZYNA XXI» (БИН 210340015379) основано 12 марта 2021 года в Актобе. Сегодня мы — один из ключевых казахстанских производителей запорной арматуры до DN2600: клиновых задвижек, обратных и регулирующих клапанов, переключающих устройств.
             </p>
             <p>
               Вся продукция выпускается по собственному стандарту <span className="text-foreground font-semibold">СТ ТОО 210340015379-01-2025</span> и подтверждена сертификатом <span className="text-gold font-semibold">CT-KZ</span>.
