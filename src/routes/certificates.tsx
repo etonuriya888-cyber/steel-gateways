@@ -3,8 +3,8 @@ import { Award, X } from "lucide-react";
 import { useState } from "react";
 
 const certs = [
-  { title: "Сертификат CT-KZ · DN50–DN100", code: "KZ.7500016.07.01.04125" },
-  { title: "Сертификат CT-KZ · DN150–DN200", code: "KZ.7500016.07.01.04126" },
+  { title: "Сертификат CT-KZ · DN50–DN1000", code: "KZ.7500016.07.01.04125" },
+  { title: "Сертификат CT-KZ · DN1000–DN2600", code: "KZ.7500016.07.01.04126" },
   { title: "СТ ТОО 210340015379-01-2025", code: "Собственный стандарт" },
   { title: "Декларация о соответствии ТР ТС", code: "EAC 032/2013" },
 ];
@@ -16,7 +16,7 @@ export default function CertificatesPage() {
     <>
       <Helmet>
         <title>Сертификаты CT-KZ — TEMIR QAZYNA XXI</title>
-        <meta name="description" content="Действующие сертификаты CT-KZ на стальные клиновые задвижки. Подтверждение казахстанского происхождения продукции." />
+        <meta name="description" content="Действующие сертификаты CT-KZ на запорную арматуру до DN2600. Подтверждение казахстанского происхождения продукции." />
         <link rel="canonical" href="/certificates" />
         <meta property="og:title" content="Сертификаты — TEMIR QAZYNA XXI" />
         <meta property="og:url" content="/certificates" />
