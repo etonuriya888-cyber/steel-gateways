@@ -126,7 +126,7 @@ export default function IndexPage() {
           <div>
             <div className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gold">О компании</div>
             <h2 className="font-display text-4xl font-black md:text-5xl">
-              Реальный производитель, <span className="text-gradient-gold">а не посредник</span>
+              Реальный производитель
             </h2>
             <p className="mt-6 text-muted-foreground">
               TEMIR QAZYNA XXI основана 12 марта 2021 года в Актобе. Мы производим промышленную запорную арматуру до DN2600 по собственному стандарту СТ ТОО 210340015379-01-2025.
