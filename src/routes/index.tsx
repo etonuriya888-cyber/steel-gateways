@@ -6,6 +6,7 @@ import productionImg from "@/assets/production.jpg";
 import pipelineImg from "@/assets/pipeline.jpg";
 import valveImg from "@/assets/valve-product.jpg";
 import { RequestForm } from "@/components/site/RequestForm";
+import { Catalogs } from "@/components/site/Catalogs";
 import { CATEGORIES } from "@/lib/products";
 
 const trust = [
