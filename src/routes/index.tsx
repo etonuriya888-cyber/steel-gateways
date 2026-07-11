@@ -6,6 +6,7 @@ import productionImg from "@/assets/production.jpg";
 import pipelineImg from "@/assets/pipeline.jpg";
 import valveImg from "@/assets/valve-product.jpg";
 import { RequestForm } from "@/components/site/RequestForm";
+import { Catalogs } from "@/components/site/Catalogs";
 import { CATEGORIES } from "@/lib/products";
 
 const trust = [
@@ -243,8 +244,12 @@ export default function IndexPage() {
         </div>
       </section>
 
+      {/* CATALOGS LIBRARY */}
+      <Catalogs />
+
       {/* INDUSTRIES */}
       <section className="mx-auto max-w-7xl px-6 py-24">
+
         <div className="mb-12 text-center">
           <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">Отрасли</div>
           <h2 className="font-display text-4xl font-black md:text-5xl">Где работает наша арматура</h2>
