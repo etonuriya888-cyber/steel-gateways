@@ -9,12 +9,14 @@ import cover900_4 from "@/assets/catalogs/class900-nps4-cover.jpg.asset.json";
 import cover900_8 from "@/assets/catalogs/class900-nps8-cover.jpg.asset.json";
 import coverZms from "@/assets/catalogs/zms-65-210-cover.jpg.asset.json";
 
-import pdf150 from "@/assets/catalogs/class150-nps2.pdf.asset.json";
-import pdf300 from "@/assets/catalogs/class300-nps3.pdf.asset.json";
-import pdf900_3 from "@/assets/catalogs/class900-nps3.pdf.asset.json";
-import pdf900_4 from "@/assets/catalogs/class900-nps4.pdf.asset.json";
-import pdf900_8 from "@/assets/catalogs/class900-nps8.pdf.asset.json";
-import pdfZms from "@/assets/catalogs/zms-65-210.pdf.asset.json";
+// PDFs live in /public/catalogs so they are served as static files in production (Vercel).
+const pdf150 = { url: "/catalogs/class150-nps2.pdf" };
+const pdf300 = { url: "/catalogs/class300-nps3.pdf" };
+const pdf900_3 = { url: "/catalogs/class900-nps3.pdf" };
+const pdf900_4 = { url: "/catalogs/class900-nps4.pdf" };
+const pdf900_8 = { url: "/catalogs/class900-nps8.pdf" };
+const pdfZms = { url: "/catalogs/zms-65-210.pdf" };
+
 
 type Catalog = {
   id: string;
