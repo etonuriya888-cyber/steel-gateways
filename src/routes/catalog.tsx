@@ -31,6 +31,19 @@ export default function CatalogPage() {
         </div>
       </section>
 
+      {/* OFFICIAL PDF CATALOGS — shared source with home page */}
+      <Catalogs
+        eyebrow="Основные каталоги продукции"
+        title={<>Официальные <span className="text-gradient-gold">PDF-каталоги</span> производителя</>}
+        description="Сводный инженерный каталог и отдельные технические паспорта на выпускаемые изделия. Открывайте прямо в браузере или скачивайте оригинальный документ."
+      />
+
+      {/* ADDITIONAL TECHNICAL DOCUMENTATION — existing category grid */}
+      <div className="mx-auto max-w-7xl px-6 pt-4">
+        <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Дополнительная техническая документация</div>
+        <h2 className="mt-3 font-display text-3xl font-black md:text-4xl">Направления продукции</h2>
+      </div>
+
       {/* CATEGORY GRID */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
