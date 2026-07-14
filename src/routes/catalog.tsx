@@ -98,7 +98,7 @@ export default function CatalogPage() {
         <div className="mt-12 rounded-3xl border border-gold/30 bg-gold/5 p-8 md:p-12 text-center">
           <div className="text-xs font-bold uppercase tracking-widest text-gold">Индивидуальные заказы</div>
           <h2 className="mt-3 font-display text-2xl font-black md:text-3xl">
-            Мы постоянно расширяем линейку продукции и готовы рассматривать индивидуальные технические требования заказчиков.
+            Мы постоянно расширяем линейку выпускаемой продукции. Возможно изготовление нестандартного оборудования по чертежам, техническим требованиям и индивидуальным спецификациям заказчика.
           </h2>
           <a href="#request" className="mt-6 inline-flex rounded-md bg-gradient-gold px-6 py-3 text-sm font-bold text-gold-foreground shadow-glow">
             Обсудить ваш проект
