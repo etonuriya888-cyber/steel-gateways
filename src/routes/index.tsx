@@ -202,7 +202,7 @@ export default function IndexPage() {
                 <Sparkles className="absolute right-5 top-5 h-5 w-5 text-gold" />
                 <div className="text-xs font-bold uppercase tracking-widest text-gold">Ключевое преимущество</div>
                 <p className="mt-2 font-display text-xl font-bold leading-snug md:text-2xl">
-                  «Мы постоянно расширяем линейку продукции и готовы рассматривать индивидуальные технические требования заказчиков.»
+                  «Мы постоянно расширяем линейку выпускаемой продукции. Возможно изготовление нестандартного оборудования по чертежам, техническим требованиям и индивидуальным спецификациям заказчика.»
                 </p>
               </div>
 
