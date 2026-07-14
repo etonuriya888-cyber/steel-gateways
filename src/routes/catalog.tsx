@@ -3,6 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import valveImg from "@/assets/valve-product.jpg";
 import { CATEGORIES } from "@/lib/products";
 import { RequestForm } from "@/components/site/RequestForm";
+import { Catalogs } from "@/components/site/Catalogs";
 import { useState } from "react";
 
 export default function CatalogPage() {
